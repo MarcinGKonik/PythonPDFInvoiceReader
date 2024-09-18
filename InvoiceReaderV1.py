@@ -48,21 +48,21 @@ def extract_column_content_with_header_inheritance(pdf_path, column_name):
     return column_content
 
 # File and column definitions
-pdf_path = "1.pdf"
-column_name_nazwa = "NAZWA KRÓTKA"
-column_name_ilosc = "Cena\nzakupu"
-column_name_cena = "Cena\nsprzedaży"
+pdf_path = "xyz.pdf"
+column_name_nazwa = "columnHeaderX"
+column_name_ilosc = "columnHeaderY"
+column_name_cena = "columnNameZ"
 
 # Extract data from the PDF
-content_nazwa = extract_column_content_with_header_inheritance(pdf_path, column_name_nazwa)
-content_ilosc = extract_column_content_with_header_inheritance(pdf_path, column_name_ilosc)
-content_cena = extract_column_content_with_header_inheritance(pdf_path, column_name_cena)
+content_nazwa = extract_column_content_with_header_inheritance(pdf_path, column_name_x)
+content_ilosc = extract_column_content_with_header_inheritance(pdf_path, column_name_y)
+content_cena = extract_column_content_with_header_inheritance(pdf_path, column_name_z)
 
 # Create a DataFrame with the extracted data
 df = pd.DataFrame({
-    column_name_nazwa: content_nazwa,
-    column_name_ilosc: content_ilosc,
-    column_name_cena: content_cena
+    column_name_nazwa: content_x,
+    column_name_ilosc: content_y,
+    column_name_cena: content_z
 })
 
 # Check if the Excel file exists and append new data if it does
