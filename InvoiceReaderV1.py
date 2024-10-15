@@ -26,7 +26,6 @@ def extract_column_content_with_header_inheritance(pdf_path, column_name):
                     headers = table[0]
                     print(f"Found headers on page {page_num}: {headers}")
 
-                    # Check if the desired column is in the headers
                     if column_name in headers:
                         col_index = headers.index(column_name)
                         print(f"Column '{column_name}' found at index {col_index}")
@@ -34,7 +33,6 @@ def extract_column_content_with_header_inheritance(pdf_path, column_name):
                         print(f"Column '{column_name}' not found in headers on page {page_num}")
                         continue
 
-                # If headers were already found, process the rows
                 for row in table[1:]:
                     if len(row) > col_index:
                         column_content.append(row[col_index])
